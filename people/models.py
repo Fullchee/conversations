@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 
 class Person(models.Model):
@@ -6,10 +7,10 @@ class Person(models.Model):
         verbose_name_plural = "people"
 
     name = models.TextField()
-    mnemonic = models.TextField()
+    mnemonic = HTMLField()
     last_updated = models.DateTimeField(auto_now=True)
-    topics = models.TextField()
-    notes = models.TextField()
+    topics = HTMLField()
+    notes = HTMLField()
     # LinkedIn URL: get the profile picture?
 
 
